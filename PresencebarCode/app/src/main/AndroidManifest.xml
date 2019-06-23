@@ -17,6 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".HorarioDisponivelActivity"></activity>
+        <activity android:name=".HorarioDetailActivity" />
+        <activity android:name=".HorarioActivity" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -29,8 +32,7 @@
         <activity
             android:name=".FullscreenActivity"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/FullscreenTheme"
-            />
+            android:theme="@style/FullscreenTheme" />
     </application>
 
 </manifest>
