@@ -1,4 +1,4 @@
-package com.example.rodrigosouza.presencebarcode.util;
+package com.example.rodrigosouza.presencebarcode.utils;
 
 import android.content.Context;
 import android.widget.Toast;

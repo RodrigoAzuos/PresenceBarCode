@@ -19,4 +19,12 @@
     <string name="unrecognized_code">Código não reconhecido.</string>
     <string name="next_bar_code">Aguardando próxima leitura</string>
     <string name="all_readers">Lista de matriculas lidas</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+
+
 </resources>
