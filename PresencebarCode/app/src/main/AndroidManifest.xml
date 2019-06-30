@@ -20,9 +20,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PeofessorHorarioActivity"></activity>
         <activity android:name=".HorarioDisponivelActivity" />
-        <activity android:name=".HorarioDetailActivity" /> <!-- activity android:name=".HorarioActivity" / -->
+        <activity android:name=".HorarioDetailActivity" />
+	<activity android:name=".HorarioActivity" />
         <activity
-            android:name=".HorarioActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
