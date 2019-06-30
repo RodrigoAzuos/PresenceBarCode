@@ -193,12 +193,16 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.main_settings) {
             Intent intent = new Intent(this,HorarioActivity.class);
             startActivity(intent);
             return true;
         }
-
+        if (id == R.id.main_hrlist) {
+            Intent intent = new Intent(this,HorarioDisponivelActivity.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

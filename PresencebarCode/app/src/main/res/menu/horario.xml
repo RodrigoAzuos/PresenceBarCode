@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/main_settings"
-        android:title="@string/action_horario"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
-    <item android:id="@+id/main_hrlist"
+    <item android:id="@+id/action_hrlist"
         android:title="@string/hr_list"
         android:orderInCategory="100"
         app:showAsAction="never" />

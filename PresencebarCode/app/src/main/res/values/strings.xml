@@ -20,4 +20,6 @@
     <string name="next_bar_code">Aguardando próxima leitura</string>
     <string name="all_readers">Lista de matriculas lidas</string>
     <string name="action_horario">Horários</string>
+    <string name="hr_list">horarios disponíveis</string>
+    <string name="solicitar_horario">Solicitar</string>
 </resources>

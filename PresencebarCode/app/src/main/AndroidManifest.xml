@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rodrigosouza.presencebarcode">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
@@ -17,11 +18,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HorarioDisponivelActivity"></activity>
-        <activity android:name=".HorarioDetailActivity" />
-        <activity android:name=".HorarioActivity" />
+        <activity android:name=".PeofessorHorarioActivity"></activity>
+        <activity android:name=".HorarioDisponivelActivity" />
+        <activity android:name=".HorarioDetailActivity" /> <!-- activity android:name=".HorarioActivity" / -->
         <activity
-            android:name=".MainActivity"
+            android:name=".HorarioActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
