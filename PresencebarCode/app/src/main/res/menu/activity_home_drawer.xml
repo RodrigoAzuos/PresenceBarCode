@@ -8,7 +8,7 @@
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_menu_share"
-            android:title="Function 1" />
+            android:title="Horario" />
         <item
             android:id="@+id/nav_call"
             android:icon="@drawable/ic_call_black_24dp"
