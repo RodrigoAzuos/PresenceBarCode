@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rodrigosouza.presencebarcode.api.ApiService;
+import com.example.rodrigosouza.presencebarcode.api.ApiServiceLogin;
 import com.example.rodrigosouza.presencebarcode.model.Token;
 import com.example.rodrigosouza.presencebarcode.model.Usuario;
 import com.example.rodrigosouza.presencebarcode.utils.Constants;
@@ -21,7 +22,7 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ApiService apiService;
+    ApiServiceLogin apiService;
     SecurityPreferences securityPreferences;
 
     private EditText edUsername;
@@ -38,11 +39,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void initComponents(){
-        apiService = new ApiService("");
+        apiService = new ApiServiceLogin();
         securityPreferences = new SecurityPreferences(this);
         btEntrar.setOnClickListener(this);
         tvEsqueciSenha.setOnClickListener(this);
-        estaLogado();
+        if (estaLogado())
+            initProxActivity();
     }
 
     public void bindView(){
