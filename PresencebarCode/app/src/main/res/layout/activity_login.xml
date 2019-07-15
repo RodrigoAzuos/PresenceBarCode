@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants">
+
+            <ImageView
+                android:id="@+id/bgImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chapter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="104dp"
+                android:gravity="start"
+                android:text="Login"
+                android:textAlignment="textStart"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.047"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            style="@style/editText_style"
+            android:id="@+id/editUsernameLogin"
+            android:inputType="textShortMessage"
+            android:hint="Digite seu usuario"
+            />
+
+        <EditText
+            style="@style/editText_style"
+            android:id="@+id/editPasswordLogin"
+            android:inputType="textPassword"
+            android:hint="Digite sua senha"
+            />
+
+        <Button
+            style="@style/button_style"
+            android:id="@+id/btnEntrarLogin"
+            android:text="Entrar"/>
+
+        <TextView
+            style="@style/textView_style"
+            android:id="@+id/tv_forgotpassword"
+            android:textColor="#00BCD4"
+            android:text="Esqueci a senha"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

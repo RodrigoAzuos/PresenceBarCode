@@ -3,7 +3,6 @@ package com.example.rodrigosouza.presencebarcode;
 import android.graphics.Color;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,8 +18,18 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rodrigosouza.presencebarcode.adapters.CardAdapter;
+import com.example.rodrigosouza.presencebarcode.api.ApiService;
+import com.example.rodrigosouza.presencebarcode.utils.Constants;
+import com.example.rodrigosouza.presencebarcode.utils.SecurityPreferences;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -32,6 +41,8 @@ public class HomeActivity extends AppCompatActivity {
     private ScrollView scrollView;
     private boolean scrollFlag = false;
 
+    ApiService apiService;
+    SecurityPreferences securityPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +55,9 @@ public class HomeActivity extends AppCompatActivity {
         tvWish = findViewById(R.id.tv_wish);
         tvName = findViewById(R.id.tv_name);
         tvToolbar = findViewById(R.id.txt_toolbar);
+
+        securityPreferences = new SecurityPreferences(this);
+        apiService = new ApiService(securityPreferences.getSavedString(Constants.TOKEN));
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
