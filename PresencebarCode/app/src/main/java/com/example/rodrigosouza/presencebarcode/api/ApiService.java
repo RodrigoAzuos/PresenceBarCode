@@ -1,5 +1,6 @@
 package com.example.rodrigosouza.presencebarcode.api;
 
+import com.example.rodrigosouza.presencebarcode.api.endpoints.LoginEndPoint;
 import com.example.rodrigosouza.presencebarcode.api.endpoints.RegistroEndPoint;
 
 import okhttp3.Interceptor;
@@ -9,14 +10,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiService {
 
-    public static  final String BASE_URL = "http://192.168.43.174:8000/api/";
+    public static  final String BASE_URL = "http://192.168.0.111:8000/api/v1/";
     public Retrofit retrofit;
     public Interceptor interceptor;
 
     public RegistroEndPoint registroEndPoint;
+    public LoginEndPoint loginEndPoint;
 
-    public ApiService(){
-        this.interceptor = new InterceptorAPI();
+    public ApiService(String token){
+        this.interceptor = new InterceptorAPI("token " + token);
 
         OkHttpClient.Builder builderCliente = new OkHttpClient.Builder();
         builderCliente.interceptors().add(this.interceptor);
@@ -28,6 +30,7 @@ public class ApiService {
                 .client(cliente)
                 .build();
 
+        loginEndPoint = retrofit.create(LoginEndPoint.class);
         registroEndPoint = retrofit.create(RegistroEndPoint.class);
 
     }
