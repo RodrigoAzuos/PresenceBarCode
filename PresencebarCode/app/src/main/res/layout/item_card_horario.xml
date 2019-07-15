@@ -9,10 +9,10 @@
     app:cardCornerRadius="10dp">
 
     <ImageView
-        android:id="@+id/img_acao"
+        android:id="@+id/img_acao2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/barras"
+        android:background="@drawable/ausencia4"
         android:foreground="@drawable/ic_rectangle_1"
         />
 
@@ -31,7 +31,7 @@
             android:layout_gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/tv_name_grid"
+            android:id="@+id/tv_name_grid2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Código de Barras"

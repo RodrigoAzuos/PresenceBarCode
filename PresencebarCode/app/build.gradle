@@ -32,8 +32,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 
 
-
-
     /* Barcode Scanner API com ZXing */
     implementation('me.dm7.barcodescanner:zxing:1.9.8') {
         exclude module: 'support-v4'

@@ -41,7 +41,7 @@
         android:background="@android:color/white"
         android:fillViewport="true"
         android:id="@+id/scroolViewMain"
-        tools:context=".MainActivity">
+        tools:context=".app.MainActivity">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

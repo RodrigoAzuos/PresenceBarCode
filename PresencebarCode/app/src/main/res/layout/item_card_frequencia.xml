@@ -12,7 +12,7 @@
         android:id="@+id/img_acao"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/barras"
+        android:background="@drawable/frequencia2"
         android:foreground="@drawable/ic_rectangle_1"
         />
 
@@ -34,7 +34,7 @@
             android:id="@+id/tv_name_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Código de Barras"
+            android:text="Iniciar Frequência"
             android:textColor="@android:color/white"
             android:layout_gravity="center_vertical"
             android:layout_margin="4dp"/>

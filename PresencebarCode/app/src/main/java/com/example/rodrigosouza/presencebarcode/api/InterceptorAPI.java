@@ -18,7 +18,6 @@ public class InterceptorAPI implements Interceptor {
     @Override
     public Response intercept(Interceptor.Chain chain) throws IOException {
         Request request = chain.request().newBuilder()
-                .addHeader(AUTHORIZATION, TOKEN)
                 .build();
 
         return chain.proceed(request);

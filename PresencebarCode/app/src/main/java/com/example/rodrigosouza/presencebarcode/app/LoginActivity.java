@@ -1,4 +1,4 @@
-package com.example.rodrigosouza.presencebarcode;
+package com.example.rodrigosouza.presencebarcode.app;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rodrigosouza.presencebarcode.api.ApiService;
+import com.example.rodrigosouza.presencebarcode.R;
 import com.example.rodrigosouza.presencebarcode.api.ApiServiceLogin;
 import com.example.rodrigosouza.presencebarcode.model.Token;
 import com.example.rodrigosouza.presencebarcode.model.Usuario;
@@ -75,6 +75,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void logarUsuario(Token token) {
         securityPreferences.saveString(Constants.TOKEN, token.getToken());
+        securityPreferences.saveLong(Constants.ID_USUARIO_LOGADO, token.getId());
+        securityPreferences.saveString(Constants.USUARIO_LOGADO, token.getUsername());
         initProxActivity();
     }
 
@@ -91,7 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void initProxActivity(){
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, TurmasActivity.class);
         startActivity(intent);
         finish();
     }

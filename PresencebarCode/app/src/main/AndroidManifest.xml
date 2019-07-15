@@ -11,29 +11,29 @@
         android:required="true" />
 
     <application
-        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".app.InteresseActivity"></activity>
+        <activity android:name=".app.AusenciaActivity" />
+        <activity android:name=".app.TurmasActivity" />
+        <activity android:name=".app.MainActivity" />
+        <activity android:name=".app.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity">
-        </activity>
+        <activity android:name=".app.HomeActivity" />
         <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme"></activity>
-        <activity
-            android:name=".FullscreenActivity"
+            android:name=".app.FullscreenActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/FullscreenTheme" />
     </application>
