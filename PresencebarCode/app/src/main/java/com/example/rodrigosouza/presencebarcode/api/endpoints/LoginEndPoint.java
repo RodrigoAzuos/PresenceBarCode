@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 
 public interface LoginEndPoint {
 
-    @POST("token/")
+    @POST("logado/")
     Call<Token> getToken(@Body Usuario usuario);
 
 }
