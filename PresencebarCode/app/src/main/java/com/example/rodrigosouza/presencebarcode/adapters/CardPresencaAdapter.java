@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.rodrigosouza.presencebarcode.app.CargaHorariaActivity;
 import com.example.rodrigosouza.presencebarcode.app.MainActivity;
 import com.example.rodrigosouza.presencebarcode.R;
 import com.example.rodrigosouza.presencebarcode.model.Item;
@@ -51,7 +52,7 @@ public class CardPresencaAdapter extends RecyclerView.Adapter<CardPresencaAdapte
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Item item = mDataset.get(position);
+        final Item item = mDataset.get(position);
 
         holder.tvNameGrid.setText(item.getDescricao());
 
@@ -61,9 +62,15 @@ public class CardPresencaAdapter extends RecyclerView.Adapter<CardPresencaAdapte
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity , MainActivity.class);
-                activity.startActivityForResult(intent,0);
-                activity.overridePendingTransition(R.anim.lefttoright, R.anim.stable);
+                Intent intent1 = new Intent(activity , MainActivity.class);
+                Intent intent2 = new Intent(activity, CargaHorariaActivity.class);
+
+                if (item.getDescricao().equalsIgnoreCase("Carga Horária")){
+                    activity.startActivityForResult(intent2,0);
+                    activity.overridePendingTransition(R.anim.lefttoright, R.anim.stable);
+                }else
+                    activity.startActivityForResult(intent1,0);
+                    activity.overridePendingTransition(R.anim.lefttoright, R.anim.stable);
 
             }
         });

@@ -8,24 +8,26 @@ import android.view.MenuItem;
 
 import com.example.rodrigosouza.presencebarcode.R;
 
-public class InteresseActivity extends AppCompatActivity {
+public class CargaHorariaActivity extends AppCompatActivity {
 
-    public AppBarLayout appBarLayout;
+    private AppBarLayout appBarLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_interesse);
+        setContentView(R.layout.activity_carga_horaria);
+
         setupViews();
     }
 
     public void setupViews(){
-        final Toolbar toolbar = findViewById(R.id.toolbar_interesse);
+        final Toolbar toolbar = findViewById(R.id.toolbar_carga_horaria);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle("Declarar Interesse");
+        getSupportActionBar().setTitle("Carga Horária");
 
-        appBarLayout = findViewById(R.id.app_bar_interesse);
+        appBarLayout = findViewById(R.id.app_bar_carga_horaria);
 
         appBarLayout.bringToFront();
 

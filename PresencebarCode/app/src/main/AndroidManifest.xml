@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".app.InteresseActivity"></activity>
+        <activity android:name=".app.CargaHorariaActivity"></activity>
+        <activity android:name=".app.InteresseActivity" />
         <activity android:name=".app.AusenciaActivity" />
         <activity android:name=".app.TurmasActivity" />
         <activity android:name=".app.MainActivity" />

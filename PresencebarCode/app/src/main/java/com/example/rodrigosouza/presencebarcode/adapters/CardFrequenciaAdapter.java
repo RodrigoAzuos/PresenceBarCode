@@ -56,9 +56,7 @@ public class CardFrequenciaAdapter extends RecyclerView.Adapter<CardFrequenciaAd
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity , MainActivity.class);
-                activity.startActivityForResult(intent,0);
-                activity.overridePendingTransition(R.anim.lefttoright, R.anim.stable);
+                Toast.makeText(activity, "Irá iniciar um frequência!",Toast.LENGTH_LONG).show();
             }
         });
     }
