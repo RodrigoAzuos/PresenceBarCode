@@ -1,8 +1,10 @@
 package com.example.rodrigosouza.presencebarcode.api;
 
+import com.example.rodrigosouza.presencebarcode.api.endpoints.FrequenciaEndPoint;
 import com.example.rodrigosouza.presencebarcode.api.endpoints.LoginEndPoint;
 import com.example.rodrigosouza.presencebarcode.api.endpoints.RegistroEndPoint;
 import com.example.rodrigosouza.presencebarcode.api.endpoints.TurmaEndPoint;
+import com.example.rodrigosouza.presencebarcode.model.Frequencia;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -18,6 +20,7 @@ public class ApiService {
     public RegistroEndPoint registroEndPoint;
     public LoginEndPoint loginEndPoint;
     public TurmaEndPoint turmaEndPoint;
+    public FrequenciaEndPoint frequenciaEndPoint;
 
     public ApiService(String token){
         this.interceptor = new InterceptorAPI("token " + token);
@@ -35,6 +38,7 @@ public class ApiService {
         loginEndPoint = retrofit.create(LoginEndPoint.class);
         registroEndPoint = retrofit.create(RegistroEndPoint.class);
         turmaEndPoint = retrofit.create(TurmaEndPoint.class);
+        frequenciaEndPoint = retrofit.create(FrequenciaEndPoint.class);
 
     }
 }

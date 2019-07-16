@@ -17,6 +17,8 @@ import android.widget.TextView;
 import com.example.rodrigosouza.presencebarcode.R;
 import com.example.rodrigosouza.presencebarcode.app.HomeActivity;
 import com.example.rodrigosouza.presencebarcode.model.Turma;
+import com.example.rodrigosouza.presencebarcode.utils.Constants;
+import com.example.rodrigosouza.presencebarcode.utils.SecurityPreferences;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,7 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.ViewHolder> 
 
     private List<Turma> mDataset;
     private Context mContext;
+    private SecurityPreferences securityPreferences;
 
     public TurmaAdapter(List<Turma> Dataset, Context context){
         mDataset = Dataset;
@@ -45,6 +48,8 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
 
         final Turma turma = mDataset.get(i);
+        securityPreferences = new SecurityPreferences(mContext);
+
 
         viewHolder.tvNomeTurma.setText(turma.getDisciplina());
         viewHolder.llSelectTurma.setVisibility(View.GONE);

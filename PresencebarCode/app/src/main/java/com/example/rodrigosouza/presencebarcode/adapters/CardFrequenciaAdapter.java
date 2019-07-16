@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rodrigosouza.presencebarcode.app.FrequenciaActivity;
 import com.example.rodrigosouza.presencebarcode.app.MainActivity;
 import com.example.rodrigosouza.presencebarcode.R;
 import com.example.rodrigosouza.presencebarcode.utils.VectorDrawableUtils;
@@ -56,7 +57,11 @@ public class CardFrequenciaAdapter extends RecyclerView.Adapter<CardFrequenciaAd
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, "Irá iniciar um frequência!",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(activity, FrequenciaActivity.class);
+                intent.putExtra("turmaId",activity.getIntent().getLongExtra("turmaId", -1));
+                intent.putExtra("turmaDisciplinaNome",activity.getIntent().getStringExtra("turmaDisciplinaNome"));
+                activity.startActivityForResult(intent,0);
+                activity.overridePendingTransition(R.anim.lefttoright, R.anim.stable);
             }
         });
     }
