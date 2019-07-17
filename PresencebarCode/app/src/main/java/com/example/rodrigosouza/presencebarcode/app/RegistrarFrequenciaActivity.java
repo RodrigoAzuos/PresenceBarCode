@@ -41,6 +41,7 @@ public class RegistrarFrequenciaActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Frequencia> call, Response<Frequencia> response) {
                 Toast.makeText(getApplicationContext(),""+response.message() +"- " + response.code(), Toast.LENGTH_LONG).show();
+                securityPreferences.saveLong(Constants.FREQUENCIA_ATIVA_ID, response.body().getId());
             }
 
             @Override
@@ -57,7 +58,6 @@ public class RegistrarFrequenciaActivity extends AppCompatActivity {
         long disciplina = this.idExtra;
         return new Frequencia(data,horaInicio,horaFim,disciplina);
     }
-
 
     private void bindViews(){
 
