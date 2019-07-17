@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../PresencebarCode.iml" filepath="$PROJECT_DIR$/../PresencebarCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PresencebarCode.iml" filepath="$PROJECT_DIR$/../PresencebarCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
     </modules>
   </component>

@@ -35,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     private ScrollView scrollView;
     private boolean scrollFlag = false;
     private long turmaId;
+    private String turmaDisciplinaNome;
 
     ApiService apiService;
     SecurityPreferences securityPreferences;
@@ -46,7 +47,9 @@ public class HomeActivity extends AppCompatActivity {
         final Toolbar toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle(getIntent().getStringExtra("turmaDisciplinaNome"));
+        turmaDisciplinaNome = getIntent().getStringExtra("turmaDisciplinaNome");
+
+        getSupportActionBar().setTitle(turmaDisciplinaNome);
 
         initComponents();
 
