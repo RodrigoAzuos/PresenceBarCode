@@ -11,7 +11,7 @@ public class Frequencia {
     @SerializedName("hora_inicio") private String horaInicio;
     @SerializedName("hora_fim") private String horaFim;
     @SerializedName("disciplina") private long disciplina;
-    @SerializedName("disciplina") private List<Registro> registros;
+    @SerializedName("disciplina") private List<Long> registros;
 
     public Frequencia(String data, String horaInicio, String horaFim, long disciplina) {
         this.data = data;
