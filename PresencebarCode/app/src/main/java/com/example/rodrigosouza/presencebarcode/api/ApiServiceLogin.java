@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiServiceLogin {
 
-    public static  final String BASE_URL = "http://classroomifpi.ga/api/";
+    public static  final String BASE_URL = "http://192.168.0.111:8000/api/";
     public Retrofit retrofit;
     public Interceptor interceptor;
 

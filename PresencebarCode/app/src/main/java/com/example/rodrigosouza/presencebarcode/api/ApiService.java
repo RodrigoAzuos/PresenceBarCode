@@ -1,9 +1,12 @@
 package com.example.rodrigosouza.presencebarcode.api;
 
+import com.example.rodrigosouza.presencebarcode.api.endpoints.AlunoEndPoint;
 import com.example.rodrigosouza.presencebarcode.api.endpoints.FrequenciaEndPoint;
 import com.example.rodrigosouza.presencebarcode.api.endpoints.LoginEndPoint;
+import com.example.rodrigosouza.presencebarcode.api.endpoints.MatriculaEndPoint;
 import com.example.rodrigosouza.presencebarcode.api.endpoints.RegistroEndPoint;
 import com.example.rodrigosouza.presencebarcode.api.endpoints.TurmaEndPoint;
+import com.example.rodrigosouza.presencebarcode.app.MainActivity;
 import com.example.rodrigosouza.presencebarcode.model.Frequencia;
 
 import okhttp3.Interceptor;
@@ -13,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiService {
 
-    public static  final String BASE_URL = "http://classroomifpi.ga/api/";
+    public static  final String BASE_URL = "http://192.168.0.111:8000/api/";
     public Retrofit retrofit;
     public Interceptor interceptor;
 
@@ -21,6 +24,8 @@ public class ApiService {
     public LoginEndPoint loginEndPoint;
     public TurmaEndPoint turmaEndPoint;
     public FrequenciaEndPoint frequenciaEndPoint;
+    public AlunoEndPoint alunoEndPoint;
+    public MatriculaEndPoint matriculaEndPoint;
 
     public ApiService(String token){
         this.interceptor = new InterceptorAPI("token " + token);
@@ -39,6 +44,9 @@ public class ApiService {
         registroEndPoint = retrofit.create(RegistroEndPoint.class);
         turmaEndPoint = retrofit.create(TurmaEndPoint.class);
         frequenciaEndPoint = retrofit.create(FrequenciaEndPoint.class);
+        alunoEndPoint = retrofit.create(AlunoEndPoint.class);
+        matriculaEndPoint = retrofit.create(MatriculaEndPoint.class);
+
 
     }
 }

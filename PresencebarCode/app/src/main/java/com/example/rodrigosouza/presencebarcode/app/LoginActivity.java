@@ -43,8 +43,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         securityPreferences = new SecurityPreferences(this);
         btEntrar.setOnClickListener(this);
         tvEsqueciSenha.setOnClickListener(this);
-        if (estaLogado())
-            initProxActivity();
+//        if (estaLogado())
+        initProxActivity();
     }
 
     public void bindView(){
