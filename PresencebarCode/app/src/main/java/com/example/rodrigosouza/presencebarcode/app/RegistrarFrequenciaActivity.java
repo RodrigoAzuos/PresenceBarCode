@@ -9,8 +9,10 @@ import android.widget.Toast;
 
 import com.example.rodrigosouza.presencebarcode.R;
 import com.example.rodrigosouza.presencebarcode.api.ApiService;
+import com.example.rodrigosouza.presencebarcode.model.Disciplina;
 import com.example.rodrigosouza.presencebarcode.model.Frequencia;
 import com.example.rodrigosouza.presencebarcode.utils.Constants;
+import com.example.rodrigosouza.presencebarcode.utils.SecurityPreferences;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,13 +22,16 @@ public class RegistrarFrequenciaActivity extends AppCompatActivity {
     private Button btnRegistrarFrequencia;
     private EditText editData, editHoraInicio, editHoraFim;
     private ApiService apiService;
+    private SecurityPreferences securityPreferences;
+    private long idExtra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_frequencia);
         bindViews();
-        apiService = new ApiService(Constants.TOKEN);
+        setupViews();
+        apiService = new ApiService(securityPreferences.getSavedString(Constants.TOKEN));
 
     }
 
@@ -35,7 +40,7 @@ public class RegistrarFrequenciaActivity extends AppCompatActivity {
         call.enqueue(new Callback<Frequencia>() {
             @Override
             public void onResponse(Call<Frequencia> call, Response<Frequencia> response) {
-                Toast.makeText(getApplicationContext(),""+response.message(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),""+response.message() +"- " + response.code(), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -49,9 +54,8 @@ public class RegistrarFrequenciaActivity extends AppCompatActivity {
         String data = editData.getText().toString();
         String horaInicio = editHoraInicio.getText().toString();
         String horaFim = editHoraFim.getText().toString();
-        String ativo = "true";
-        String disciplina = ""+getIntent().getLongExtra("turmaId",-1);
-        return new Frequencia(data,ativo,horaInicio,horaFim,disciplina);
+        long disciplina = this.idExtra;
+        return new Frequencia(data,horaInicio,horaFim,disciplina);
     }
 
 
@@ -67,5 +71,11 @@ public class RegistrarFrequenciaActivity extends AppCompatActivity {
                 registrarFrequencia(criarFrequencia());
             }
         });
+    }
+
+    public void setupViews(){
+        this.securityPreferences = new SecurityPreferences(this);
+        this.idExtra = securityPreferences.getSavedLong(Constants.TURMA_ID);
+
     }
 }

@@ -69,6 +69,7 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.ViewHolder> 
                         Intent intent = new Intent(mContext, HomeActivity.class);
                         intent.putExtra("turmaId", turma.getId());
                         intent.putExtra("turmaDisciplinaNome", turma.getDisciplina());
+                        securityPreferences.saveLong(Constants.TURMA_ID, turma.getId());
                         mContext.startActivity(intent);
                     }
                 }, 2000);

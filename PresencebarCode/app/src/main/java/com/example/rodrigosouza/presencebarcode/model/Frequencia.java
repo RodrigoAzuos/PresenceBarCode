@@ -8,11 +8,10 @@ public class Frequencia {
     @SerializedName("ativa") private String ativa;
     @SerializedName("hora_inicio") private String horaInicio;
     @SerializedName("hora_fim") private String horaFim;
-    @SerializedName("disciplina") private String disciplina;
+    @SerializedName("disciplina") private long disciplina;
 
-    public Frequencia(String data, String ativa, String horaInicio, String horaFim, String disciplina) {
+    public Frequencia(String data, String horaInicio, String horaFim, long disciplina) {
         this.data = data;
-        this.ativa = ativa;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
         this.disciplina = disciplina;
@@ -58,11 +57,11 @@ public class Frequencia {
         this.horaFim = horaFim;
     }
 
-    public String getDisciplina() {
+    public long getDisciplina() {
         return disciplina;
     }
 
-    public void setDisciplina(String disciplina) {
+    public void setDisciplina(long disciplina) {
         this.disciplina = disciplina;
     }
 }

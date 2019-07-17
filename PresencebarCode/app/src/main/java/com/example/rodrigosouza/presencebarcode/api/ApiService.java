@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiService {
 
-    public static  final String BASE_URL = "http://192.168.0.106:8000/api/";
+    public static  final String BASE_URL = "http://classroomifpi.ga/api/";
     public Retrofit retrofit;
     public Interceptor interceptor;
 

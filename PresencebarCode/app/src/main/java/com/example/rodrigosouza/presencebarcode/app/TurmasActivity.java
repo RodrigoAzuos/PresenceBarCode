@@ -55,7 +55,7 @@ public class TurmasActivity extends AppCompatActivity {
 
         mRecyclerView.setHasFixedSize(true);
 
-        apiService = new ApiService(Constants.TOKEN);
+        apiService = new ApiService(securityPreferences.getSavedString(Constants.TOKEN));
         getTurmas();
 
     }
