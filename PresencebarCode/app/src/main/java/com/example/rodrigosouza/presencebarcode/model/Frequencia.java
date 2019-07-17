@@ -2,6 +2,8 @@ package com.example.rodrigosouza.presencebarcode.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Frequencia {
     @SerializedName("id") private long id;
     @SerializedName("data") private String data;
@@ -9,6 +11,7 @@ public class Frequencia {
     @SerializedName("hora_inicio") private String horaInicio;
     @SerializedName("hora_fim") private String horaFim;
     @SerializedName("disciplina") private long disciplina;
+    @SerializedName("disciplina") private List<Registro> registros;
 
     public Frequencia(String data, String horaInicio, String horaFim, long disciplina) {
         this.data = data;
